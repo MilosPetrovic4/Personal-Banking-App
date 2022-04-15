@@ -53,6 +53,4 @@ public class BankInfo {
     public void setPassword(String p) {
         password = p;
     }
-    
-
 }

@@ -195,8 +195,11 @@ public class LoginForm extends javax.swing.JFrame {
         String card_num = jTextField4.getText();
         String passW = jTextField6.getText();
         
-        for (BankInfo BI: MainMenu.bankInformation) {
-        if (passW.equals(BI.getPassword()) && card_num.equals(BI.getCardNumber())) {
+        try {
+        BankInfo BI = MainMenu.bankMap.get(card_num);
+            
+        if (BI.getPassword().equals(passW)) {  
+            
             MainMenu M = new MainMenu();
             M.setVisible(true);
             M.pack();
@@ -204,22 +207,11 @@ public class LoginForm extends javax.swing.JFrame {
             M.setDefaultCloseOperation(MainMenu.EXIT_ON_CLOSE);
             M.label5.setText("securely signed in: " + BI.getEmail() );
             this.dispose();
-            break;
-        } 
-        
-        else {
-          ; 
-             }
+            }
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        catch(Exception e) {
+            ;
+        }  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void label1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label1MouseClicked
