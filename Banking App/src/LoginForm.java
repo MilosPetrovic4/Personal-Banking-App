@@ -8,11 +8,15 @@
  * @author mpetr2
  */
 public class LoginForm extends javax.swing.JFrame {
-
+    //String cardNumber;
+    //String password;
+    
     /**
      * Creates new form RegisterForm
      */
     public LoginForm() {
+        //cardNumber = cN;
+        //password = p;
         initComponents();
     }
 
@@ -48,7 +52,6 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel5.setText("Password:");
 
         jTextField6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(242, 242, 242));
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField6ActionPerformed(evt);
@@ -56,7 +59,6 @@ public class LoginForm extends javax.swing.JFrame {
         });
 
         jTextField4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(0, 153, 255));
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
@@ -189,7 +191,31 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String card_num = jTextField4.getText();
+        String passW = jTextField6.getText();
+        
+        BankInfo BI = new BankInfo();
+        
+        if (passW.equals(BI.getPassword()) && card_num.equals(BI.getCardNumber())) {
+            MainMenu M = new MainMenu();
+            M.setVisible(true);
+            M.pack();
+            M.setLocationRelativeTo(null);
+            M.setDefaultCloseOperation(MainMenu.EXIT_ON_CLOSE);
+        } 
+        
+        else {
+          int pass = 0; 
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void label1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label1MouseClicked

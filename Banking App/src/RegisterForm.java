@@ -276,8 +276,18 @@ public class RegisterForm extends javax.swing.JFrame {
         String name = jTextField1.getText();
         String cardNumber = jTextField4.getText();
         String email = jTextField3.getText();
+        String phoneNumber = jTextField5.getText();
+        String password = jTextField6.getText();
         
-        MainMenu MM = new MainMenu(name, cardNumber, email);
+        BankInfo BI = new BankInfo();
+        BI.setName(name);
+        BI.setCardNumber(cardNumber);
+        BI.setEmail(email);
+        BI.setPhoneNumber(phoneNumber);
+        BI.setPassword(password);
+        
+        MainMenu MM = new MainMenu(); //name, cardNumber, email, phoneNumber, password
+        MM.label5.setText("securely signed in: " + BI.getEmail() );
         MM.setVisible(true);
         MM.pack();
         MM.setLocationRelativeTo(null);
