@@ -8,15 +8,11 @@
  * @author mpetr2
  */
 public class LoginForm extends javax.swing.JFrame {
-    //String cardNumber;
-    //String password;
     
     /**
      * Creates new form RegisterForm
      */
     public LoginForm() {
-        //cardNumber = cN;
-        //password = p;
         initComponents();
     }
 
@@ -213,7 +209,7 @@ public class LoginForm extends javax.swing.JFrame {
         
         else {
           ; 
-            }
+             }
         }
         
         
