@@ -2,13 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
+import java.util.ArrayList;
+import java.util.HashMap;
 /**
  *
  * @author mpetr2
  */
 public class MainMenu extends javax.swing.JFrame {
    
+     public static ArrayList<BankInfo> bankInformation = new ArrayList<BankInfo>();
+     public static HashMap<String, BankInfo> bankMap = new HashMap<String, BankInfo>();
     /**
      * Creates new form MainMenu
      */

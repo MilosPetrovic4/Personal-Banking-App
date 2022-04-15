@@ -286,8 +286,11 @@ public class RegisterForm extends javax.swing.JFrame {
         BI.setPhoneNumber(phoneNumber);
         BI.setPassword(password);
         
+        MainMenu.bankInformation.add(BI);
+        
         MainMenu MM = new MainMenu(); //name, cardNumber, email, phoneNumber, password
         MM.label5.setText("securely signed in: " + BI.getEmail() );
+        MainMenu.bankInformation.add(BI); 
         MM.setVisible(true);
         MM.pack();
         MM.setLocationRelativeTo(null);

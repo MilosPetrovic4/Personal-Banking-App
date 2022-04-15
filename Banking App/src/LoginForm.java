@@ -103,6 +103,11 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Login Form");
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -194,18 +199,21 @@ public class LoginForm extends javax.swing.JFrame {
         String card_num = jTextField4.getText();
         String passW = jTextField6.getText();
         
-        BankInfo BI = new BankInfo();
-        
+        for (BankInfo BI: MainMenu.bankInformation) {
         if (passW.equals(BI.getPassword()) && card_num.equals(BI.getCardNumber())) {
             MainMenu M = new MainMenu();
             M.setVisible(true);
             M.pack();
             M.setLocationRelativeTo(null);
             M.setDefaultCloseOperation(MainMenu.EXIT_ON_CLOSE);
+            M.label5.setText("securely signed in: " + BI.getEmail() );
+            this.dispose();
+            break;
         } 
         
         else {
-          int pass = 0; 
+          ; 
+            }
         }
         
         
@@ -237,6 +245,10 @@ public class LoginForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setState(RegisterForm.ICONIFIED);
     }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel8MouseClicked
 
     /**
      * @param args the command line arguments
