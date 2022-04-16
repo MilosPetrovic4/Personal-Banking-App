@@ -291,6 +291,12 @@ public class RegisterForm extends javax.swing.JFrame {
         String phoneNumber = jTextField5.getText();
         String password = jTextField6.getText();
         
+        if (name.equals("") || cardNumber.equals("") || email.equals("") || phoneNumber.equals("") || password.equals("")) {
+            ;
+        } 
+        
+        else {
+        
         //Store user information in BankInfo class
         BankInfo BI = new BankInfo();
         BI.setName(name);
@@ -310,6 +316,7 @@ public class RegisterForm extends javax.swing.JFrame {
         MM.setLocationRelativeTo(null);
         MM.setDefaultCloseOperation(MainMenu.EXIT_ON_CLOSE);
         this.dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void label1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label1MouseClicked

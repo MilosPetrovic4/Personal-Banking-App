@@ -318,14 +318,23 @@ public class AccountSupport extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1KeyPressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //Create new account object
-        BankInfo BI = new BankInfo();
-        
+       
         //gets information from text fields
         name = jTextField4.getText();
         email = jTextField5.getText();
         phoneNumber = jTextField7.getText();
         password = jPasswordField1.getText();
+        
+        if (name.equals("") || email.equals("") || phoneNumber.equals("") || password.equals("")) {
+            ;
+        } 
+        
+        else {
+            
+        
+        //Create new account object
+        BankInfo BI = new BankInfo();
+        
         
         //Updates account information in BankInfo class
         BI.setName(name);
@@ -344,6 +353,7 @@ public class AccountSupport extends javax.swing.JFrame {
         MM.setLocationRelativeTo(null);
         MM.setDefaultCloseOperation(RegisterForm.EXIT_ON_CLOSE);
         this.dispose();    
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
