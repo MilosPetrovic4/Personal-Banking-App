@@ -8,11 +8,11 @@
  * @author um5ro
  */
 public class BankInfo {
-    String name;
-    String cardNumber;
-    String email;
-    String phoneNumber;
-    String password;
+    String name="";
+    String cardNumber="";
+    String email="";
+    String phoneNumber="";
+    String password="";
     
     public String getName() {
         return name;
