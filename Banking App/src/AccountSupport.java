@@ -318,7 +318,6 @@ public class AccountSupport extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1KeyPressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
         //Create new account object
         BankInfo BI = new BankInfo();
         
@@ -339,15 +338,19 @@ public class AccountSupport extends javax.swing.JFrame {
         
         //Creates main menu and closes account support menu 
         MainMenu MM = new MainMenu();
+        MM.label5.setText("securely signed in: " + BI.getEmail() );
         MM.setVisible(true);
         MM.pack();
         MM.setLocationRelativeTo(null);
         MM.setDefaultCloseOperation(RegisterForm.EXIT_ON_CLOSE);
-        this.dispose();
+        this.dispose();    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         MainMenu MM = new MainMenu();
+        BankInfo BI = MainMenu.bankMap.get(card_num);
+        
+        MM.label5.setText("securely signed in: " + BI.getEmail() );
         MM.setVisible(true);
         MM.pack();
         MM.setLocationRelativeTo(null);
