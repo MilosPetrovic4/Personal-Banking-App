@@ -195,12 +195,15 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //get card number and password variables from text fields
         String card_num = jTextField4.getText();
         String passW = jTextField6.getText();
         
+        //try ... catch: prevents undefined key values in the hashmap from returning errors
         try {
         BankInfo BI = MainMenu.bankMap.get(card_num);
-            
+        
+        //Verifies whether the textfield password is equal to the password from the object saved in the hashmap
         if (BI.getPassword().equals(passW)) {  
             
             MainMenu M = new MainMenu();
@@ -218,7 +221,7 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void label1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label1MouseClicked
-
+        //Opens register form and closes login form
         RegisterForm rgf = new RegisterForm();
         rgf.setVisible(true);
         rgf.pack();

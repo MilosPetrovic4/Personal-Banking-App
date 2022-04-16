@@ -347,9 +347,9 @@ public class AccountSupport extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        //Creates main menu form and closes account support form
         MainMenu MM = new MainMenu();
         BankInfo BI = MainMenu.bankMap.get(card_num);
-        
         MM.label5.setText("securely signed in: " + BI.getEmail() );
         MM.setVisible(true);
         MM.pack();
