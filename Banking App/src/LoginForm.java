@@ -206,7 +206,7 @@ public class LoginForm extends javax.swing.JFrame {
         //Verifies whether the textfield password is equal to the password from the object saved in the hashmap
         if (BI.getPassword().equals(passW)) {  
             
-            MainMenu M = new MainMenu();
+            MainMenu M = new MainMenu(card_num);
             M.setVisible(true);
             M.pack();
             M.setLocationRelativeTo(null);
@@ -235,6 +235,13 @@ public class LoginForm extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel6MouseClicked
 
+    public String getCardNum() {
+        BankInfo BI = new BankInfo();
+        return BI.getCardNumber();
+    }
+    
+    
+    
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         // TODO add your handling code here:
         this.setState(RegisterForm.ICONIFIED);

@@ -13,11 +13,18 @@ public class BankInfo {
     String email="";
     String phoneNumber="";
     String password="";
+    double balance;
+    double savingBalance;
     
     public String getName() {
         return name;
     }
-    
+    public double getBalance(){
+        return balance;
+    }
+    public double getSavingBalance(){
+        return savingBalance;
+    }
     public String getCardNumber() {
         return cardNumber;
     }
@@ -52,5 +59,12 @@ public class BankInfo {
     
     public void setPassword(String p) {
         password = p;
+    }
+    
+    public void setBalance(double b){
+        balance = b;
+    }
+    public void setSavingBalance(double b2){
+        savingBalance = b2;
     }
 }

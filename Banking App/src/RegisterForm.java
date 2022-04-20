@@ -290,7 +290,8 @@ public class RegisterForm extends javax.swing.JFrame {
         String email = jTextField3.getText();
         String phoneNumber = jTextField5.getText();
         String password = jTextField6.getText();
-        
+        double balance = 100;
+        double balance2 = 0;
         if (name.equals("") || cardNumber.equals("") || email.equals("") || phoneNumber.equals("") || password.equals("")) {
             ;
         } 
@@ -304,12 +305,14 @@ public class RegisterForm extends javax.swing.JFrame {
         BI.setEmail(email);
         BI.setPhoneNumber(phoneNumber);
         BI.setPassword(password);
+        BI.setBalance(balance);
+        BI.setSavingBalance(balance2);
         
         //Add new account object to list
         MainMenu.bankMap.put(cardNumber, BI);
         
         //Open Main Menu
-        MainMenu MM = new MainMenu(); 
+        MainMenu MM = new MainMenu(cardNumber); 
         MM.label5.setText("securely signed in: " + BI.getEmail() ); 
         MM.setVisible(true);
         MM.pack();

@@ -9,13 +9,16 @@ import java.util.HashMap;
  * @author mpetr2
  */
 public class MainMenu extends javax.swing.JFrame {
+    String cardNumber;
    
      //public static ArrayList<BankInfo> bankInformation = new ArrayList<BankInfo>();
      public static HashMap<String, BankInfo> bankMap = new HashMap<String, BankInfo>();
     /**
      * Creates new form MainMenu
      */
-    public MainMenu() {     
+    public MainMenu(String CN) {
+        cardNumber = CN;
+        
         initComponents();
     }
 
@@ -281,10 +284,20 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(242, 242, 242));
         jLabel1.setText("High Interest Savings Account");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(242, 242, 242));
         jLabel3.setText("No Fee Chequing Account");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -314,6 +327,11 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(242, 242, 242));
         jLabel14.setText("Accounts");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
 
         jLabel15.setForeground(new java.awt.Color(242, 242, 242));
         jLabel15.setText("Account Support");
@@ -447,6 +465,33 @@ public class MainMenu extends javax.swing.JFrame {
         AS.setDefaultCloseOperation(RegisterForm.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_jLabel15MouseClicked
+    
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+       //Opens the chequing account page
+                
+        BankInfo BI = MainMenu.bankMap.get(cardNumber);
+        
+        NoFeeChequingAccount nca = new NoFeeChequingAccount(cardNumber);       
+        nca.setVisible(true);
+        nca.setLocationRelativeTo(null);
+        nca.jLabel2.setText("Current Balance: " + BI.getBalance());
+        this.dispose();
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel14MouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        //opens the savings account page
+        BankInfo BI = MainMenu.bankMap.get(cardNumber);
+        SavingAccount SA = new SavingAccount(cardNumber);
+        SA.jLabel2.setText("Current Balance: " + BI.getSavingBalance());
+        SA.setVisible(true);
+        SA.setLocationRelativeTo(null);
+        
+        this.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
   
     /**
      * @param args the command line arguments
