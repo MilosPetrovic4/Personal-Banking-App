@@ -323,6 +323,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         jLabel13.setForeground(new java.awt.Color(242, 242, 242));
         jLabel13.setText("E-Transfer");
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(242, 242, 242));
@@ -492,6 +497,17 @@ public class MainMenu extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+       BankInfo BI = MainMenu.bankMap.get(cardNumber);
+       transfer t = new transfer(cardNumber);
+       t.setVisible(true);
+       t.jLabel1.setText("Saving Account Balance: " + BI.getSavingBalance());
+       t.jLabel2.setText("Chequing Account Balance: " + BI.getBalance());
+       t.setLocationRelativeTo(null);
+       this.dispose();
+        
+    }//GEN-LAST:event_jLabel13MouseClicked
   
     /**
      * @param args the command line arguments
